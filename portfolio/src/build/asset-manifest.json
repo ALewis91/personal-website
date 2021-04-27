@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.57f69f55.chunk.css",
+    "main.js": "/static/js/main.a676722e.chunk.js",
+    "main.js.map": "/static/js/main.a676722e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09475058.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09475058.js.map",
+    "static/js/2.42aae1aa.chunk.js": "/static/js/2.42aae1aa.chunk.js",
+    "static/js/2.42aae1aa.chunk.js.map": "/static/js/2.42aae1aa.chunk.js.map",
+    "static/js/3.5576b4e3.chunk.js": "/static/js/3.5576b4e3.chunk.js",
+    "static/js/3.5576b4e3.chunk.js.map": "/static/js/3.5576b4e3.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.57f69f55.chunk.css.map": "/static/css/main.57f69f55.chunk.css.map",
+    "static/js/2.42aae1aa.chunk.js.LICENSE.txt": "/static/js/2.42aae1aa.chunk.js.LICENSE.txt",
+    "static/media/Profile.module.css": "/static/media/valdez.80e6a7dd.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.09475058.js",
+    "static/js/2.42aae1aa.chunk.js",
+    "static/css/main.57f69f55.chunk.css",
+    "static/js/main.a676722e.chunk.js"
+  ]
+}

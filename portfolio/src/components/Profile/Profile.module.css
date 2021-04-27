@@ -1,0 +1,9 @@
+
+.header_box {
+        background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../../assets/img/valdez.jpeg');
+        margin-top: -100px;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        background-attachment: fixed;
+}
