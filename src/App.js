@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
 import Aux from './hoc/Aux/Aux';
-import Layout from './hoc/Layout/Layout';
+import Profile from './components/Profile';
 
 class App extends Component {
   render() {
     return (
       <Aux>
-        <Layout>
-
-        </Layout>
+        <Profile></Profile>
       </Aux>
     );
   }
