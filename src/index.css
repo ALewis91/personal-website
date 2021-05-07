@@ -44,13 +44,14 @@ h2 {
     font-size: 180%;
     word-spacing: 2px;
     text-align: center;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 
 
 h3 {
     font-size: 110%;
+    letter-spacing: 2px;
 }
 
 

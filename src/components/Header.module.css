@@ -1,106 +1,121 @@
-
 /* Header formatting */
 .Header {
-    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../assets/img/valdez.jpeg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    background-attachment: fixed;
-    min-height: 750px;
-    margin-top: -72px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../assets/img/valdez.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-attachment: fixed;
+  position: relative;
 }
 
 .Home_box {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    height: 100%;
-    margin-left: 10%;
-    justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 80%;
+  margin-left: 10%;
+  padding-top: -72px;
+  justify-content: space-evenly;
 }
 
-.Home_box h1, .Home_box h2, .Home_box h3{
-    text-align: center;
+.Home_box h1,
+.Home_box h2,
+.Home_box h3 {
+  text-align: center;
 }
+
 
 .Home_box h1 {
-    font-size: 350%;
-    line-height: 200%;
-    color: white;
-    word-spacing: 10px;
-    letter-spacing: 2px;
+  font-size: 400%;
+  font-weight: 400;
+  line-height: 200%;
+  color: white;
+  word-spacing: 10px;
+  letter-spacing: 2px;
+  text-shadow: 2px 3px 1px #2b2b2b
 }
 
-.Home_box h2 {
-    line-height: 200%;
-}
-.Home_box h2, .Home_box h3 {
-    color: #e1e1e1;
+.Home_box h3 {
+  font-size: 100%;
+  color: #e1e1e1;
 }
 
 .row {
-    display: block;
-    flex: 0 1 auto; /* Default */
-    list-style-type: none;
-    width: 100%;
+  display: block;
+  flex: 0 1 auto; /* Default */
+  list-style-type: none;
+  width: 100%;
+}
+
+.Home_box:first-child {
+  padding-top: 10px;
 }
 
 .divider {
-    width: 80px;
-    margin: 0 auto;
-
+  width: 80px;
+  margin: 0 auto;
 }
 
-
 .Social {
-    display: flex;
-    align-items: stretch; /* Default */
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 40%;
-    margin-left: 30%;
+  display: flex;
+  align-items: stretch; /* Default */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 30px auto;
 }
 
 /* Social media icons */
 .Social li {
-    display: block;
-    flex: 0 1 auto; /* Default */
-    list-style-type: none;
-    margin: 0 20px;
-    align-self: center;
+  display: block;
+  flex: 0 1 auto; /* Default */
+  list-style-type: none;
+  margin: 0 20px;
+  align-self: center;
 }
 
 ion-icon {
-    font-size: 48px;
-    color: #e1e1e1;
-    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.8);
+  color: #e1e1e1;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.8);
 }
 
-ion-icon[name=logo-linkedin],
-ion-icon[name=logo-skype],
-ion-icon[name=logo-github],
-ion-icon[name=mail] {
-    transition: color 0.2s;
+ion-icon[name="logo-linkedin"],
+ion-icon[name="logo-skype"],
+ion-icon[name="logo-github"],
+ion-icon[name="mail"] {
+  font-size: 32px;
+  transition: color 0.2s;
 }
 
-ion-icon[name=logo-linkedin]:hover {
-    color: #0072b1;
+ion-icon[name="caret-down-circle"] {
+  font-size: 48px;
 }
 
-ion-icon[name=logo-github]:hover {
-    color: #6e5494;
+ion-icon[name="logo-linkedin"]:hover {
+  color: #0072b1;
 }
 
-ion-icon[name=logo-skype]:hover {
-    color: #00aff0;
+ion-icon[name="logo-github"]:hover {
+  color: #6e5494;
 }
 
-ion-icon[name=mail]:hover {
-    color: #ababab;
+ion-icon[name="logo-skype"]:hover {
+  color: #00aff0;
+}
+
+ion-icon[name="mail"]:hover {
+  color: #ababab;
 }
 .bottom_nav_button {
-    text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.bottom_nav_button a {
 }
 .large_icon {
-    font-size: 12px;
+  font-size: 48px;
 }
+

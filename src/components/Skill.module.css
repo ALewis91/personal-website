@@ -1,0 +1,29 @@
+.skillBox {
+    color: #a0a0a0;
+    font-size: 80%;
+}
+
+.proficiencyBox {
+    width: 100%;
+    height: 24px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: left;
+}
+
+.skillBlock {
+    height: 8px;
+    margin: auto 1px;
+    width: 8%;
+    border-radius: 15px 5px 15px 5px;
+    background-color: #00ddd2;
+    border: 1px solid #a0a0a0;
+}
+
+.skillBlockEmpty {
+    height: 8px;
+    margin: auto 0px;
+    width: 8%;
+    border-radius: 15px 5px 15px 5px;
+    border: 1px solid #a0a0a0;
+}
