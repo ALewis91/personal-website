@@ -6,7 +6,7 @@ const Skill = (props) => {
   for (var i = 0; i < props.value && i < 10; i++) {
     proficiencyBlocks.push(<div className={classes.skillBlock}></div>);
   }
-  for (var i = props.value; i < 10; i++) {
+  for (var j = props.value; j < 10; j++) {
       proficiencyBlocks.push(<div className={classes.skillBlockEmpty}></div>)
   }
   return (
