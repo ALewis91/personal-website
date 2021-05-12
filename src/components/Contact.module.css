@@ -1,7 +1,7 @@
 .contactSection {
     background-color: rgb(14, 14, 14);
     min-height: 100vh;
-    padding-bottom: 20px;
+    position: relative;
 }
 
 .contactBox {
@@ -24,4 +24,11 @@
     align-items: flex-start;
     justify-content: space-around;
     width: 80%;
+}
+
+.FooterBox {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }

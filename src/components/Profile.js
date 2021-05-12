@@ -7,7 +7,6 @@ import About from './About';
 import Contact from './Contact';
 import Projects from './Projects';
 import Resume from './Resume';
-import Footer from './Footer';
 import { Waypoint } from "react-waypoint";
 
 class Profile extends Component {
@@ -77,7 +76,6 @@ class Profile extends Component {
         <Resume></Resume>
         <Projects></Projects>
         <Contact></Contact>
-        <Footer></Footer>
       </Aux>
     );
   }
