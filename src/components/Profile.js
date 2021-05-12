@@ -22,14 +22,14 @@ class Profile extends Component {
           target: "section-about",
           text: "about",
         },
-        {
-          target: "section-resume",
-          text: "resume",
-        },
-        {
-          target: "section-projects",
-          text: "projects",
-        },
+        // {
+        //   target: "section-resume",
+        //   text: "resume",
+        // },
+        // {
+        //   target: "section-projects",
+        //   text: "projects",
+        // },
         {
           target: "section-contact",
           text: "contact",
