@@ -4,6 +4,10 @@ import Aux from "../hoc/Aux/Aux";
 import Navbar from "./Navbar";
 import Header from "./Header";
 import About from './About';
+import Contact from './Contact';
+import Projects from './Projects';
+import Resume from './Resume';
+import Footer from './Footer';
 import { Waypoint } from "react-waypoint";
 
 class Profile extends Component {
@@ -69,11 +73,11 @@ class Profile extends Component {
             ></Navbar>
           </div>
         </Waypoint>
-
         <About></About>
-        <section style={{height: '100vh'}}id="section-resume">Resume</section>
-        <section id="section-projects">Projects</section>
-        <section id="section-contact">Contact</section>
+        <Resume></Resume>
+        <Projects></Projects>
+        <Contact></Contact>
+        <Footer></Footer>
       </Aux>
     );
   }

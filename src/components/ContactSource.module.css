@@ -1,0 +1,37 @@
+.contactSource{
+    color: white;
+    text-align: center;
+    width: 200px;
+}
+
+.contactSource ion-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.contactSource h4 {
+    color: #00ddd2;
+    font-size: 90%;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.contactSource p {
+    font-size: 100%;
+}
+
+.contactSource a {
+    transition: color 0.2s;
+    color: white;
+    text-decoration: none;
+}
+
+
+.contactSource a:link,
+.contactSource a:visited {
+    color: white;
+}
+.contactSource a:hover,
+.contactSource a:active {
+    color: #00ddd290;
+}

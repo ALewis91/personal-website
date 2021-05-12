@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import { Link } from "react-scroll";
 import classes from "./Navbar.module.css";
+import logo from "../assets/img/logo-dark.png";
 
 // import logo from '../../../assets/img/logo.png';
 
@@ -10,7 +11,9 @@ class Navbar extends Component {
     let links = this.props.links.map((el, index) => (
       <li className={classes.navItem} key={index}>
         <Link
-          activeClass={this.props.sticky ? classes.stickyActive : classes.active}
+          activeClass={
+            this.props.sticky ? classes.stickyActive : classes.active
+          }
           to={el.target}
           spy={true}
           smooth={true}
@@ -21,12 +24,22 @@ class Navbar extends Component {
       </li>
     ));
     return (
-        <div className={this.props.hidden ? classes.hidden : this.props.sticky ? `${classes.sticky}` : classes.Navbar}>
+      <div
+        className={
+          this.props.hidden
+            ? classes.hidden
+            : this.props.sticky
+            ? `${classes.sticky}`
+            : classes.Navbar
+        }
+      >
         <nav>
-          {/* <img src={logo} alt="Logo" className={classes.logo}></img> */}
-          <ul className={classes.navItems}>{links}</ul>
+          <ul className={classes.navItems}>
+            <img className={classes.logo} src={logo} alt="logo"></img>
+            {links}
+          </ul>
         </nav>
-      </div>      
+      </div>
     );
   }
 }

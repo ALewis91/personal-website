@@ -74,36 +74,36 @@
   align-self: center;
 }
 
-ion-icon {
+.Home_box ion-icon {
   color: #e1e1e1;
   text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.8);
 }
 
-ion-icon[name="logo-linkedin"],
-ion-icon[name="logo-skype"],
-ion-icon[name="logo-github"],
-ion-icon[name="mail"] {
+.Home_box ion-icon[name="logo-linkedin"],
+.Home_box ion-icon[name="logo-skype"],
+.Home_box ion-icon[name="logo-github"],
+.Home_box ion-icon[name="mail"] {
   font-size: 32px;
   transition: color 0.2s;
 }
 
-ion-icon[name="caret-down-circle"] {
+.Home_box ion-icon[name="caret-down-circle"] {
   font-size: 48px;
 }
 
-ion-icon[name="logo-linkedin"]:hover {
+.Home_box ion-icon[name="logo-linkedin"]:hover {
   color: #0072b1;
 }
 
-ion-icon[name="logo-github"]:hover {
+.Home_box ion-icon[name="logo-github"]:hover {
   color: #6e5494;
 }
 
-ion-icon[name="logo-skype"]:hover {
+.Home_box ion-icon[name="logo-skype"]:hover {
   color: #00aff0;
 }
 
-ion-icon[name="mail"]:hover {
+.Home_box ion-icon[name="mail"]:hover {
   color: #ababab;
 }
 .bottom_nav_button {
@@ -111,10 +111,11 @@ ion-icon[name="mail"]:hover {
   bottom: 0px;
   left: 50%;
   transform: translate(-50%);
-}
+  color: #e1e1e1;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.8);
+  font-size: 48px;
+  }
 
-.bottom_nav_button a {
-}
 .large_icon {
   font-size: 48px;
 }

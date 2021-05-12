@@ -1,0 +1,14 @@
+.sectionHeader h3 {
+    color: #00ddd2;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.sectionHeader p {
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+}

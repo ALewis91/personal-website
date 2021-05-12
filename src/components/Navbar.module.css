@@ -6,6 +6,13 @@
   text-align: center;
 }
 
+.logo {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  margin: auto 0;
+}
 .navItems {
   display: flex;
   height: 50px;
@@ -26,7 +33,7 @@
   text-transform: uppercase;
   color: white;
   margin: auto 0;
-  font-size: 80%;
+  font-size: 75%;
   font-weight: 400;
   transition: color 0.4s;
   letter-spacing: 1px;
@@ -50,7 +57,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgb(60, 60, 60);
+  background-color: rgb(55, 55, 55);
   box-shadow: 0 2px 2px #383838;
 }
 
