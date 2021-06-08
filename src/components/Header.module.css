@@ -5,6 +5,7 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+  min-height: 480px;
   background-attachment: fixed;
   position: relative;
 }
@@ -62,16 +63,20 @@
   align-items: stretch; /* Default */
   justify-content: center;
   flex-wrap: wrap;
-  margin: 30px auto;
+  height: 32px;
 }
 
 /* Social media icons */
 .Social li {
   display: block;
-  flex: 0 1 auto; /* Default */
-  list-style-type: none;
   margin: 0 20px;
-  align-self: center;
+  align-self: stretch;
+  height: 32px;
+}
+
+.Social li a {
+  display: inline-block;
+  max-height: 100%;
 }
 
 .Home_box ion-icon {

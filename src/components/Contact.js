@@ -1,63 +1,128 @@
+import { Component } from "react";
+
 import classes from "./Contact.module.css";
 import SectionHeader from "./SectionHeader";
 import ContactSource from "./ContactSource";
 import Footer from "./Footer";
 
-const Contact = () => {
-  let location = (
-    <p>
-      13844 DogwoodAve<br></br>Chino, CA<br></br>91710
-    </p>
-  );
-  return (
-    <section id="section-contact" className={classes.contactSection}>
-      <div className={classes.contactBox}>
-        <div className={classes.contactHeaderBox}>
-          <SectionHeader
-            title="Contact"
-            subtitle="I'd love to connect with you!"
-          ></SectionHeader>
-          <p>Let me get to know more about you.</p>
-        </div>
-        <div className={classes.contactSourcesBox}>
-          <ContactSource
-            iconName="navigate-circle"
-            title="location"
-            isJSX={true}
-          >
-            {location}
-          </ContactSource>
+class Contact extends Component {
+  render() {
+    let email = null;
+    let linkedin = null;
+    let phone = null;
+    let locationBuffer = [];
+    let contactSources = [];
+
+    //Build the address JSX based on the provided address information
+    if (this.props.contactInfo) {
+      if (this.props.contactInfo.street) {
+        locationBuffer.push(
+          <div key={this.props.contactInfo.street}>
+            {this.props.contactInfo.street} <br></br>
+          </div>
+        );
+      }
+      if (this.props.contactInfo.city && this.props.contactInfo.state) {
+        locationBuffer.push(
+          <div key={this.props.contactInfo.city + this.props.contactInfo.state}>
+            {this.props.contactInfo.city + ", " + this.props.contactInfo.state}{" "}
+            <br></br>
+          </div>
+        );
+      } else if (this.props.contactInfo.city) {
+        locationBuffer.push(
+          <div key={this.props.contactInfo.city}>
+            {this.props.contactInfo.city} <br></br>
+          </div>
+        );
+      } else {
+        locationBuffer.push(
+          <div key={this.props.contactInfo.state}>
+            {this.props.contactInfo.state} <br></br>
+          </div>
+        );
+      }
+      if (this.props.contactInfo.zipcode) {
+        locationBuffer.push(
+          <div key={this.props.contactInfo.zipcode}>
+            {this.props.contactInfo.zipcode}
+          </div>
+        );
+      }
+    }
+
+    //If the user provided some address info, create a contact source with that info
+    if (locationBuffer.length > 0) {
+      contactSources.push(
+        <ContactSource iconName="navigate-circle" title="location" isJSX={true}>
+          {locationBuffer}
+        </ContactSource>
+      );
+    }
+
+    //If the user provided their email, linkedin, or phone number
+    //create a contact source with that info
+    if (this.props.contactInfo) {
+      if (this.props.contactInfo.email) {
+        contactSources.push(
           <ContactSource
             iconName="mail"
             title="email"
             isLink={true}
-            link={"mailto:contact@aaronlewis.dev"}
+            link={`mailto:${this.props.contactInfo.email}`}
           >
-            {"contact@aaronlewis.dev"}
+            {this.props.contactInfo.email}
           </ContactSource>
+        );
+      }
+
+      if (this.props.contactInfo.linkedInUrl) {
+        contactSources.push(
           <ContactSource
             iconName="logo-linkedin"
             title="Let's connect"
             isLink={true}
-            link={"https://www.linkedin.com/in/alewis91/"}
+            link={`https://${this.props.contactInfo.linkedInUrl}`}
           >
-            {"linkedin.com/in/alewis91"}
+            {this.props.contactInfo.linkedInUrl}
           </ContactSource>
+        );
+      }
+
+      if (this.props.contactInfo.phone) {
+        contactSources.push(
           <ContactSource
             iconName="call"
             title="Leave a message"
             isLink={true}
-            link={"tel:909-287-6659"}
+            link={`tel:${this.props.contactInfo.phone}`}
           >
-            {"(909) 287-6659"}
+            {this.props.contactInfo.phone}
           </ContactSource>
+        );
+      }
+    }
+
+    return (
+      <section id="section-contact" className={classes.contactSection}>
+        <div className={classes.contactBox}>
+          <div className={classes.contactHeaderBox}>
+            <SectionHeader
+              title="Contact"
+              subtitle="I'd love to connect with you!"
+            ></SectionHeader>
+            <p>Let me get to know more about you.</p>
+          </div>
+          <div className={classes.contactSourcesBox}>
+            {contactSources}
+          </div>
         </div>
-      </div>
-      <div className={classes.FooterBox}>
-        <Footer></Footer>
-      </div>
-    </section>
-  );
-};
+        <div className={classes.FooterBox}>
+          <Footer></Footer>
+        </div>
+      </section>
+    );
+  }
+}
 
 export default Contact;

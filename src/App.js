@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <Aux>
-        <Profile></Profile>
+        <Profile id="60b81432c00fbb3251565368"></Profile>
       </Aux>
     );
   }

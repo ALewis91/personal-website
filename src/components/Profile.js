@@ -36,13 +36,31 @@ class Profile extends Component {
         },
       ],
       stickyNav: false,
-    };
+      contactInfo: null
+    }
+  }
+
+  componentDidMount() {
+    let url = `http://localhost:8080/contact/search/findByCreatorId?creatorId=${this.props.id}`;
+    console.log(url);
+    fetch(url)
+    .then(response => {
+        return response.json();
+      }).then(data => {
+        this.setState((prevState, props) => {
+          const newContactInfo = data;
+          console.log("Contact info is loaded");
+          return { contactInfo: newContactInfo };
+        });
+      }).catch(err => {
+        console.log(err);
+        console.log("Error fetching contact data");
+      })
   }
 
   stickyNavToggleOn = () => {
     this.setState((prevState, props) => {
       const newStickyNavState = true;
-      console.log("Sticky nav is on");
       return { stickyNav: newStickyNavState };
     });
   };
@@ -50,7 +68,6 @@ class Profile extends Component {
   stickyNavToggleOff = () => {
     this.setState((prevState, props) => {
       const newStickyNavState = false;
-      console.log("Sticky nav is off");
       return { stickyNav: newStickyNavState };
     });
   };
@@ -64,7 +81,9 @@ class Profile extends Component {
           topOffset={51}
         >
           <div>
-            <Header links={this.state.links}></Header>
+            <Header 
+              links={this.state.links} 
+              contactInfo={this.state.contactInfo}></Header>
             <Navbar
               links={this.state.links}
               sticky={this.state.stickyNav}
@@ -75,7 +94,7 @@ class Profile extends Component {
         <About></About>
         <Resume></Resume>
         <Projects></Projects>
-        <Contact></Contact>
+        <Contact contactInfo={this.state.contactInfo}></Contact>
       </Aux>
     );
   }
