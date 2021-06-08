@@ -2,6 +2,7 @@
     color: white;
     text-align: center;
     width: 200px;
+    margin: 10px 10px;
 }
 
 .contactSource ion-icon {
@@ -18,12 +19,14 @@
 
 .contactSource p {
     font-size: 100%;
+    max-width: 100%;
 }
 
 .contactSource a {
     transition: color 0.2s;
     color: white;
     text-decoration: none;
+    max-width: 100%;
 }
 
 
