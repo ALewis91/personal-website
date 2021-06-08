@@ -41,7 +41,7 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    let url = `184.72.108.243:8080/contact/search/findByCreatorId?creatorId=${this.props.id}`;
+    let url = `http://ec2-184-72-108-243.compute-1.amazonaws.com:8080/contact/search/findByCreatorId?creatorId=${this.props.id}`;
     console.log(url);
     fetch(url)
     .then(response => {
