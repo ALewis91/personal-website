@@ -7,9 +7,6 @@ import Footer from "./Footer";
 
 class Contact extends Component {
   render() {
-    let email = null;
-    let linkedin = null;
-    let phone = null;
     let locationBuffer = [];
     let contactSources = [];
 
