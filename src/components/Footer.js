@@ -3,11 +3,13 @@ import { Link } from "react-scroll";
 
 const Footer = () => {
   var today = new Date();
-  var dd = String(today.getDate()).padStart(2, "0");
-  var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-  var yyyy = today.getFullYear();
+  var day = String(today.getDate()).padStart(2, "0");
+  var month = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  var year = today.getFullYear();
+  var hour = today.getHours();
+  var minute = today.getMinutes();
 
-  today = mm + "/" + dd + "/" + yyyy;
+  today = month + "/" + day + "/" + year + " " + hour + ":" + minute;
   return (
     <div className={classes.footer}>
       <div className={classes.topNavButton}>
