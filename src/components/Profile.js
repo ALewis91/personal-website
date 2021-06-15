@@ -41,7 +41,7 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    let url = `https://api.aaronlewis.dev:443/contact/search/findByCreatorId?creatorId=${this.props.id}`;
+    let url = `${process.env.REACT_APP_API_URL}/contact/search/findByCreatorId?creatorId=${this.props.id}`;
     fetch(url)
     .then(response => {
         return response.json();
