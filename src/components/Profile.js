@@ -42,7 +42,6 @@ class Profile extends Component {
 
   componentDidMount() {
     let url = `${process.env.REACT_APP_API_URL}/contact/search/findByCreatorId?creatorId=${this.props.id}`;
-    console.log(url);
     fetch(url)
     .then(response => {
         return response.json();
