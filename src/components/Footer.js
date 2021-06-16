@@ -1,13 +1,14 @@
 import classes from "./Footer.module.css";
 import { Link } from "react-scroll";
+import preval from 'preval.macro';
 
 const Footer = () => {
-  var today = new Date();
+  let today = preval`module.exports = new Date().toLocaleString();`
   var day = String(today.getDate()).padStart(2, "0");
-  var month = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  var month = String(today.getMonth() + 1).padStart(2, "0");
   var year = today.getFullYear();
-  var hour = today.getHours();
-  var minute = today.getMinutes();
+  var hour = today.getHours().padStart(2, "0");
+  var minute = today.getMinutes().padStart(2, "0");
 
   today = month + "/" + day + "/" + year + " " + hour + ":" + minute;
   return (
@@ -28,7 +29,7 @@ const Footer = () => {
       </div>
       <div className={classes.creditsBox}>
         <p>Designed and created by Aaron Lewis</p>
-        <p>Last updated {today}</p>
+        <p>Last updated: {today}</p>
       </div>
     </div>
   );
