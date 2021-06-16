@@ -3,14 +3,8 @@ import { Link } from "react-scroll";
 import preval from 'preval.macro';
 
 const Footer = () => {
-  let today = preval`module.exports = new Date().toLocaleString();`
-  var day = String(today.getDate()).padStart(2, "0");
-  var month = String(today.getMonth() + 1).padStart(2, "0");
-  var year = today.getFullYear();
-  var hour = today.getHours().padStart(2, "0");
-  var minute = today.getMinutes().padStart(2, "0");
+  const today = preval`module.exports = new Date().toLocaleString();`
 
-  today = month + "/" + day + "/" + year + " " + hour + ":" + minute;
   return (
     <div className={classes.footer}>
       <div className={classes.topNavButton}>
@@ -29,7 +23,7 @@ const Footer = () => {
       </div>
       <div className={classes.creditsBox}>
         <p>Designed and created by Aaron Lewis</p>
-        <p>Last updated: {today}</p>
+        <p>Last updated {today}</p>
       </div>
     </div>
   );
