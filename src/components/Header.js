@@ -36,7 +36,7 @@ class Header extends Component {
       if (this.props.contactInfo.email) {
         socialMediaLinks.push(
           <li key="email">
-            <a href={this.props.contactInfo.email}>
+            <a href={`mailto:${this.props.contactInfo.email}`}>
               <ion-icon className={classes.large_icon} name="mail"></ion-icon>
             </a>
           </li>
