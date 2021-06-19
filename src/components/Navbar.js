@@ -9,7 +9,6 @@ import logo from "../assets/img/logo-dark.png";
 class Navbar extends Component {
 
   render() {
-    console.log(this.props);
     let links = this.props.links.map((el, index) => (
       <li className={classes.navItem} key={index}>
         <Link

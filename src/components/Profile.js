@@ -75,7 +75,6 @@ class Profile extends Component {
 
   toggleSideDrawer() {
     this.setState((prevState, props) => {
-      console.log("val");
       const newSideDrawerState = !prevState.sideDrawerOpen;
       return { sideDrawerOpen: newSideDrawerState };
     });
