@@ -48,21 +48,13 @@ class Contact extends Component {
       }
     }
 
-    //If the user provided some address info, create a contact source with that info
-    if (locationBuffer.length > 0) {
-      contactSources.push(
-        <ContactSource iconName="navigate-circle" title="location" isJSX={true}>
-          {locationBuffer}
-        </ContactSource>
-      );
-    }
-
     //If the user provided their email, linkedin, or phone number
     //create a contact source with that info
     if (this.props.contactInfo) {
       if (this.props.contactInfo.email) {
         contactSources.push(
           <ContactSource
+            key="mail"
             iconName="mail"
             title="email"
             isLink={true}
@@ -76,6 +68,7 @@ class Contact extends Component {
       if (this.props.contactInfo.linkedInUrl) {
         contactSources.push(
           <ContactSource
+            key="linkedin"
             iconName="logo-linkedin"
             title="Let's connect"
             isLink={true}
@@ -89,6 +82,7 @@ class Contact extends Component {
       if (this.props.contactInfo.phone) {
         contactSources.push(
           <ContactSource
+            key="phone"
             iconName="call"
             title="Leave a message"
             isLink={true}
@@ -98,6 +92,17 @@ class Contact extends Component {
           </ContactSource>
         );
       }
+
+      //If the user provided some address info, create a contact source with that info
+    if (locationBuffer.length > 0) {
+      contactSources.push(
+        <ContactSource 
+        key="location"
+        iconName="navigate-circle" title="location" isJSX={true}>
+          {locationBuffer}
+        </ContactSource>
+      );
+    }
     }
 
     return (

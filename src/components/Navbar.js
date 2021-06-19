@@ -7,17 +7,20 @@ import logo from "../assets/img/logo-dark.png";
 // import logo from '../../../assets/img/logo.png';
 
 class Navbar extends Component {
+
   render() {
+    console.log(this.props);
     let links = this.props.links.map((el, index) => (
       <li className={classes.navItem} key={index}>
         <Link
           activeClass={
-            this.props.sticky ? classes.stickyActive : classes.active
+            classes.active
           }
           to={el.target}
           spy={true}
           smooth={true}
           duration={500}
+          onClick={this.props.toggleSideDrawer}
         >
           {el.text}
         </Link>
@@ -25,20 +28,30 @@ class Navbar extends Component {
     ));
     return (
       <div
-        className={
-          this.props.hidden
-            ? classes.hidden
-            : this.props.sticky
-            ? `${classes.sticky}`
-            : classes.Navbar
-        }
+        className={this.props.sticky ? `${classes.sticky}` : classes.Navbar }
       >
+        <div className={classes.hamburgerIcon}>
+          {/* <button onClick={this.props.toggleSideDrawer} >HIt me</button> */}
+          <ion-icon onClick={this.props.toggleSideDrawer} className={classes.hamburgerIcon} name="menu"></ion-icon>
+        </div>
+        <div className={classes.navbar_name}>
+          <h3>Aaron Lewis</h3>
+        </div>
+        <img className={classes.logo} src={logo} alt="logo"></img>
+        <div>
         <nav>
-          <ul className={classes.navItems}>
-            <img className={classes.logo} src={logo} alt="logo"></img>
+          <ul className={classes.standardNav + ' ' + classes.navItems}>
             {links}
           </ul>
+          <div className={this.props.sideDrawerOpen ? classes.sideDrawer: classes.hidden}>
+            <ul className={classes.navItems}>
+              {links}
+            </ul>
+          </div>
+
         </nav>
+        </div>
+        
       </div>
     );
   }

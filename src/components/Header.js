@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import { Link } from "react-scroll";
 import classes from "./Header.module.css";
-import Navbar from "./Navbar";
 
 class Header extends Component {
   render() {
@@ -57,7 +56,6 @@ class Header extends Component {
     return (
       <section id="section-home">
         <header className={classes.Header}>
-          <Navbar links={this.props.links}></Navbar>
           <div className={classes.Home_box}>
             <div className={classes.row}>
               <h1>
@@ -65,7 +63,7 @@ class Header extends Component {
                   ? `${this.props.contactInfo.firstName} ${this.props.contactInfo.lastName}`
                   : "FirstName LastName"}
               </h1>
-              {/* <h3>Background Image: Valdez-Cordova, Alaska by Nikomi Fong</h3> */}
+              <h3>Aspiring Full-Stack Developer</h3>
             </div>
             <div className={classes.row}>
               <ul className={classes.Social}>

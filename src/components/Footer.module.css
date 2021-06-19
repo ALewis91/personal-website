@@ -29,3 +29,16 @@
 .topNavButton ion-icon {
     transform: translateY(-50%);
 }
+
+@media (max-width: 480px) {
+  .footer p {
+    padding-left: 0;
+    font-size: 60%;
+  }
+
+  .creditsBox {
+    margin-top: 20px;
+    padding-top: 20px;
+    min-height: 65px;
+  }
+}

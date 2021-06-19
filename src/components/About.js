@@ -25,24 +25,26 @@ class About extends Component {
               Polytechnic State University, Pomona with a B.S. in Computer
               Science. My primary interests are in full-stack development and
               Cloud Ops. My main focus recently has been improving my knowledge
-              of frontend technologies and frameworks.{" "}
+              of frontend technologies and frameworks.
             </p>
           </div>
           <div className={classes.box_2_col + " " + classes.highlightsBox}>
             <div className={classes.row_1_span_2}>
               <h3 className={classes.subHeader}>Profile</h3>
-              <p className={classes.small_ghost_p + ' ' + classes.spacer}>
+              <p className={classes.small_ghost_p + " " + classes.spacer}>
                 Currently seeking a full-time software engineering position in
                 Raleigh, NC but open to other remote opportunities. If you think
                 I'm a good fit, feel free to reach me via{" "}
                 <a href="mailto:aaron.lewis.swe@gmail.com">email</a>.
               </p>
-              <h3 className={classes.ghost_h3}>Full Name</h3>
-              <p className={classes.small_ghost_p}>Aaron Lewis</p>
-              <h3 className={classes.ghost_h3}>Birthdate</h3>
-              <p className={classes.small_ghost_p}>July 24th, 1991</p>
-              <h3 className={classes.ghost_h3}>Email</h3>
-              <p className={classes.small_ghost_p}>contact@aaronlewis.dev</p>
+              <div className={classes.summaryDemographics}>
+                <h3 className={classes.ghost_h3}>Full Name</h3>
+                <p className={classes.small_ghost_p}>Aaron Lewis</p>
+                <h3 className={classes.ghost_h3}>Birthdate</h3>
+                <p className={classes.small_ghost_p}>July 24th, 1991</p>
+                <h3 className={classes.ghost_h3}>Email</h3>
+                <p className={classes.small_ghost_p}>contact@aaronlewis.dev</p>
+              </div>
             </div>
             <div className={classes.row_1_span_2}>
               <div className={classes.skillsBox}>

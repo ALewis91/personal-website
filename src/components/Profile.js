@@ -36,8 +36,10 @@ class Profile extends Component {
         },
       ],
       stickyNav: false,
-      contactInfo: null
+      contactInfo: null,
+      sideDrawerOpen: false,
     }
+    this.toggleSideDrawer = this.toggleSideDrawer.bind(this);
   }
 
   componentDidMount() {
@@ -71,23 +73,32 @@ class Profile extends Component {
     });
   };
 
+  toggleSideDrawer() {
+    this.setState((prevState, props) => {
+      console.log("val");
+      const newSideDrawerState = !prevState.sideDrawerOpen;
+      return { sideDrawerOpen: newSideDrawerState };
+    });
+  };
+
   render() {
     return (
       <Aux>
         <Waypoint
-          onEnter={this.stickyNavToggleOff}
           onLeave={this.stickyNavToggleOn}
+          onEnter={this.stickyNavToggleOff}
           topOffset={51}
         >
           <div>
+          <Navbar
+              links={this.state.links}
+              sticky={this.state.stickyNav}
+              sideDrawerOpen={this.state.sideDrawerOpen}
+              toggleSideDrawer={this.toggleSideDrawer.bind(this)}
+              ></Navbar>
             <Header 
               links={this.state.links} 
               contactInfo={this.state.contactInfo}></Header>
-            <Navbar
-              links={this.state.links}
-              sticky={this.state.stickyNav}
-              hidden={!this.state.stickyNav}
-            ></Navbar>
           </div>
         </Waypoint>
         <About></About>

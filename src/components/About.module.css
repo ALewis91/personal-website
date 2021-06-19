@@ -93,3 +93,71 @@
 .spacer {
     padding-bottom: 40px;
 }
+
+@media (max-width: 480px) {
+
+    .aboutBox {
+        color: #e1e1e1;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .selfie {
+        border-radius: 50%;
+        height: 130px;
+        border: 2px solid #a0a0a0;
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+
+    .aboutBox p {
+        text-align: justify;
+        line-height: 120%;
+        color:#a0a0a0;
+        min-width: 300px;
+    }
+
+    .row_1_span_2 {
+        margin: 5% 0;
+        width: 90%;
+        padding: 0;
+        min-width: 300px;
+    }
+
+    .small_ghost_p {
+        margin: 0;
+        font-size: 80%;
+        text-align: justify;
+        line-height: 150%;
+        color:#a0a0a0;
+        max-width: 100% !important;
+    }
+
+    .spacer {
+        padding-bottom: 40px;
+    }
+
+    .introBox {
+        padding-top: 15px;
+    }
+
+    .summaryDemographics .small_ghost_p {
+        margin-top: 5px;
+        margin-bottom: 15px;
+        font-size: 80%;
+        text-align: justify;
+        line-height: 150%;
+        color:#a0a0a0;
+        width: 100%;
+    }
+    
+    .skillBox:first-of-type {
+        padding-top: 10px;
+    }
+
+    .skillBox {
+        width: 90%;
+        margin-left: 5%;
+        padding-left: 0;
+    }
+}

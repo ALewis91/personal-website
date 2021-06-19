@@ -32,3 +32,13 @@
     left: 0;
     bottom: 0;
 }
+
+@media (max-width: 480px) {
+    .contactSection {
+        min-height: calc(100vh - 51px);
+    }
+    .contactSourcesBox {
+        margin: 50px 10% 90px 10%;
+        width: 80%;
+    }
+}

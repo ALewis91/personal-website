@@ -12,3 +12,19 @@
     font-size: 200%;
     font-weight: bold;
 }
+
+@media (max-width: 480px) {
+    .sectionHeader h3 {
+        padding-top: 30px;
+        padding-bottom: 10px;
+        text-align: center;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+    
+    .sectionHeader p {
+        text-align: center;
+        font-size: 100%;
+        font-weight: bold;
+    }
+}
