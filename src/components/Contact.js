@@ -72,9 +72,9 @@ class Contact extends Component {
             iconName="logo-linkedin"
             title="Let's connect"
             isLink={true}
-            link={`https://${this.props.contactInfo.linkedInUrl}`}
+            link={this.props.contactInfo.linkedInUrl}
           >
-            {this.props.contactInfo.linkedInUrl}
+            {this.props.contactInfo.linkedInUrl.substring(12,this.props.contactInfo.linkedInUrl.length - 1)}
           </ContactSource>
         );
       }

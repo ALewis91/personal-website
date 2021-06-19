@@ -45,7 +45,9 @@ class Header extends Component {
       if (this.props.contactInfo.skypeUrl) {
         socialMediaLinks.push(
           <li key="skype">
-            <a href={this.props.contactInfo.skypeUrl}>
+            <a href={this.props.contactInfo.skypeUrl}
+            target="_blank"
+            rel="noopener noreferrer">
               <ion-icon className={classes.large_icon} name="logo-skype"></ion-icon>
             </a>
           </li>
