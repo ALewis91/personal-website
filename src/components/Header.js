@@ -63,7 +63,7 @@ class Header extends Component {
               <h1>
                 {this.props.contactInfo
                   ? `${this.props.contactInfo.firstName} ${this.props.contactInfo.lastName}`
-                  : "FirstName LastName"}
+                  : "Aaron Lewis"}
               </h1>
               <h3>Aspiring Full-Stack Developer</h3>
             </div>
