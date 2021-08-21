@@ -23,6 +23,7 @@ class App extends Component {
       }
     })
     .then(response => {
+       console.log(response);
         return response.json();
       }).then(data => {
         this.setState((prevState, props) => {
