@@ -16,7 +16,6 @@ class App extends Component {
     let email = 'contact@aaronlewis.dev';
     let password = 'sillygoose';
     fetch(userApiUrl, {
-      credentials: 'include',
       method: 'GET',
       headers: {
         'email': email,
