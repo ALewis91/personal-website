@@ -18,8 +18,8 @@ class App extends Component {
     fetch(userApiUrl, {
       method: 'GET',
       headers: {
-        'email': email,
-        'password': password
+        "email": email,
+        "password": password
       }
     })
     .then(response => {
