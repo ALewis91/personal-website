@@ -16,17 +16,18 @@ class App extends Component {
     let email = 'contact@aaronlewis.dev';
     let password = 'sillygoose';
     fetch(userApiUrl, {
-      method: 'get',
-      headers: new Headers({
-        email: email,
-        password: password
-      })
+      method: 'GET',
+      headers: {
+        'email': email,
+        'password': password
+      }
     })
     .then(response => {
+      console.log(response);
         return response.json();
       }).then(data => {
         this.setState((prevState, props) => {
-          const fetchedId = data;
+          const fetchedId = data.userId;
           console.log(`User ID retrieved for user with email ${email}` );
           return { userId: fetchedId };
         });
