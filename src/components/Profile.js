@@ -36,27 +36,61 @@ class Profile extends Component {
         },
       ],
       stickyNav: false,
-      contactInfo: null,
+      profileInfo: null,
+      skills: null,
       sideDrawerOpen: false,
     }
     this.toggleSideDrawer = this.toggleSideDrawer.bind(this);
   }
 
   componentDidMount() {
-    let url = `${process.env.REACT_APP_API_URL}/contact/search/findByCreatorId?creatorId=${this.props.id}`;
-    fetch(url)
+    if (this.props.userId !== null) {
+      this.fetchProfile();
+      this.fetchSkills();
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.userId !== prevProps.userId) {
+      this.fetchProfile();
+      this.fetchSkills();
+    }
+  }
+
+  fetchProfile() {
+    let profileApiUrl = `${process.env.REACT_APP_API_URL}/profile-service/user/${this.props.userId}`;
+    fetch(profileApiUrl)
     .then(response => {
         return response.json();
       }).then(data => {
         this.setState((prevState, props) => {
-          const newContactInfo = data;
-          console.log("Contact info is loaded");
-          return { contactInfo: newContactInfo };
+          const fetchedProfile = data;
+          console.log("Profile info was fetched");
+          return { profileInfo: fetchedProfile };
         });
+        console.log(data);
       }).catch(err => {
         console.log(err);
-        console.log("Error fetching contact data");
-      })
+        console.log("Error fetching user profile");
+      });
+  }
+
+  fetchSkills() {
+    let skillApiUrl = `${process.env.REACT_APP_API_URL}/skills-service/user/${this.props.userId}`;
+    fetch(skillApiUrl)
+    .then(response => {
+        return response.json();
+      }).then(data => {
+        this.setState((prevState, props) => {
+          const fetchedSkills = data;
+          console.log("Skill info was fetched");
+          return { skills: fetchedSkills };
+        });
+        console.log(data);
+      }).catch(err => {
+        console.log(err);
+        console.log("Error fetching user skills");
+      });
   }
 
   stickyNavToggleOn = () => {
@@ -97,13 +131,15 @@ class Profile extends Component {
               ></Navbar>
             <Header 
               links={this.state.links} 
-              contactInfo={this.state.contactInfo}></Header>
+              profileInfo={this.state.profileInfo}></Header>
           </div>
         </Waypoint>
-        <About></About>
+        <About
+          skills={this.state.skills}
+          ></About>
         <Resume></Resume>
         <Projects></Projects>
-        <Contact contactInfo={this.state.contactInfo}></Contact>
+        <Contact profileInfo={this.state.profileInfo}></Contact>
       </Aux>
     );
   }

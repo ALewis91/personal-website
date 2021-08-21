@@ -7,6 +7,20 @@ import SectionHeader from "./SectionHeader";
 
 class About extends Component {
   render() {
+    let skillsList = [];
+    if (this.props.skills) {
+      const parent = this.props.skills;
+      for (const skill of parent.skills) {
+        skillsList.push(
+          <Skill 
+          key={skill.id}
+          id={skill.id}
+          name={skill.skillName} 
+          value={skill.value}></Skill>
+        )}
+
+    }
+
     return (
       <section id="section-about" className={classes.aboutSection}>
         <div className={classes.aboutBox}>
@@ -56,13 +70,7 @@ class About extends Component {
                   Below are some highlights:
                 </p>
                 <div className={classes.skillBox}>
-                  <Skill name="Java" value={8}></Skill>
-                  <Skill name="C++" value={7}></Skill>
-                  <Skill name="React" value={5}></Skill>
-                  <Skill name="Angular" value={4}></Skill>
-                  <Skill name="Node/Express" value={5}></Skill>
-                  <Skill name="Javascript/CSS/HTML" value={5}></Skill>
-                  <Skill name="NoSql/Sql" value={3}></Skill>
+                  {skillsList}
                 </div>
               </div>
             </div>

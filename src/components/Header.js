@@ -6,12 +6,12 @@ import classes from "./Header.module.css";
 class Header extends Component {
   render() {
     let socialMediaLinks = [];
-    if (this.props.contactInfo) {
-      if (this.props.contactInfo.gitHubUrl) {
+    if (this.props.profileInfo) {
+      if (this.props.profileInfo.gitHubUrl) {
         socialMediaLinks.push(
           <li key="github">
             <a
-              href={this.props.contactInfo.gitHubUrl}
+              href={this.props.profileInfo.gitHubUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -20,11 +20,11 @@ class Header extends Component {
           </li>
         );
       }
-      if (this.props.contactInfo.linkedInUrl) {
+      if (this.props.profileInfo.linkedInUrl) {
         socialMediaLinks.push(
           <li key="linkedin">
             <a
-              href={this.props.contactInfo.linkedInUrl}
+              href={this.props.profileInfo.linkedInUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -33,19 +33,19 @@ class Header extends Component {
           </li>
         );
       }
-      if (this.props.contactInfo.email) {
+      if (this.props.profileInfo.email) {
         socialMediaLinks.push(
           <li key="email">
-            <a href={`mailto:${this.props.contactInfo.email}`}>
+            <a href={`mailto:${this.props.profileInfo.email}`}>
               <ion-icon className={classes.large_icon} name="mail"></ion-icon>
             </a>
           </li>
         );
       }
-      if (this.props.contactInfo.skypeUrl) {
+      if (this.props.profileInfo.skypeUrl) {
         socialMediaLinks.push(
           <li key="skype">
-            <a href={this.props.contactInfo.skypeUrl}
+            <a href={this.props.profileInfo.skypeUrl}
             target="_blank"
             rel="noopener noreferrer">
               <ion-icon className={classes.large_icon} name="logo-skype"></ion-icon>
@@ -61,8 +61,8 @@ class Header extends Component {
           <div className={classes.Home_box}>
             <div className={classes.row}>
               <h1>
-                {this.props.contactInfo
-                  ? `${this.props.contactInfo.firstName} ${this.props.contactInfo.lastName}`
+                {this.props.profileInfo
+                  ? `${this.props.profileInfo.firstName} ${this.props.profileInfo.lastName}`
                   : "Aaron Lewis"}
               </h1>
               <h3>Aspiring Full-Stack Developer</h3>

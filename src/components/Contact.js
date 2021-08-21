@@ -11,38 +11,38 @@ class Contact extends Component {
     let contactSources = [];
 
     //Build the address JSX based on the provided address information
-    if (this.props.contactInfo) {
-      if (this.props.contactInfo.street) {
+    if (this.props.profileInfo) {
+      if (this.props.profileInfo.street) {
         locationBuffer.push(
-          <div key={this.props.contactInfo.street}>
-            {this.props.contactInfo.street} <br></br>
+          <div key={this.props.profileInfo.street}>
+            {this.props.profileInfo.street} <br></br>
           </div>
         );
       }
-      if (this.props.contactInfo.city && this.props.contactInfo.state) {
+      if (this.props.profileInfo.city && this.props.profileInfo.state) {
         locationBuffer.push(
-          <div key={this.props.contactInfo.city + this.props.contactInfo.state}>
-            {this.props.contactInfo.city + ", " + this.props.contactInfo.state}{" "}
+          <div key={this.props.profileInfo.city + this.props.profileInfo.state}>
+            {this.props.profileInfo.city + ", " + this.props.profileInfo.state}{" "}
             <br></br>
           </div>
         );
-      } else if (this.props.contactInfo.city) {
+      } else if (this.props.profileInfo.city) {
         locationBuffer.push(
-          <div key={this.props.contactInfo.city}>
-            {this.props.contactInfo.city} <br></br>
+          <div key={this.props.profileInfo.city}>
+            {this.props.profileInfo.city} <br></br>
           </div>
         );
       } else {
         locationBuffer.push(
-          <div key={this.props.contactInfo.state}>
-            {this.props.contactInfo.state} <br></br>
+          <div key={this.props.profileInfo.state}>
+            {this.props.profileInfo.state} <br></br>
           </div>
         );
       }
-      if (this.props.contactInfo.zipcode) {
+      if (this.props.profileInfo.zipcode) {
         locationBuffer.push(
-          <div key={this.props.contactInfo.zipcode}>
-            {this.props.contactInfo.zipcode}
+          <div key={this.props.profileInfo.zipcode}>
+            {this.props.profileInfo.zipcode}
           </div>
         );
       }
@@ -50,45 +50,45 @@ class Contact extends Component {
 
     //If the user provided their email, linkedin, or phone number
     //create a contact source with that info
-    if (this.props.contactInfo) {
-      if (this.props.contactInfo.email) {
+    if (this.props.profileInfo) {
+      if (this.props.profileInfo.email) {
         contactSources.push(
           <ContactSource
             key="mail"
             iconName="mail"
             title="email"
             isLink={true}
-            link={`mailto:${this.props.contactInfo.email}`}
+            link={`mailto:${this.props.profileInfo.email}`}
           >
-            {this.props.contactInfo.email}
+            {this.props.profileInfo.email}
           </ContactSource>
         );
       }
 
-      if (this.props.contactInfo.linkedInUrl) {
+      if (this.props.profileInfo.linkedInUrl) {
         contactSources.push(
           <ContactSource
             key="linkedin"
             iconName="logo-linkedin"
             title="Let's connect"
             isLink={true}
-            link={this.props.contactInfo.linkedInUrl}
+            link={this.props.profileInfo.linkedInUrl}
           >
-            {this.props.contactInfo.linkedInUrl.substring(12,this.props.contactInfo.linkedInUrl.length - 1)}
+            {this.props.profileInfo.linkedInUrl.substring(12,this.props.profileInfo.linkedInUrl.length - 1)}
           </ContactSource>
         );
       }
 
-      if (this.props.contactInfo.phone) {
+      if (this.props.profileInfo.phone) {
         contactSources.push(
           <ContactSource
             key="phone"
             iconName="call"
             title="Leave a message"
             isLink={true}
-            link={`tel:${this.props.contactInfo.phone}`}
+            link={`tel:${this.props.profileInfo.phone}`}
           >
-            {this.props.contactInfo.phone}
+            {this.props.profileInfo.phone}
           </ContactSource>
         );
       }
