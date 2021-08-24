@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Aux from './hoc/Aux/Aux';
-import Profile from './components/Profile';
+import Profile from './components/Profile/Profile';
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +23,6 @@ class App extends Component {
       }
     })
     .then(response => {
-       console.log(response);
         return response.json();
       }).then(data => {
         this.setState((prevState, props) => {
@@ -31,7 +30,6 @@ class App extends Component {
           console.log(`User ID retrieved for user with email ${email}` );
           return { userId: fetchedId };
         });
-        console.log(data);
       }).catch(err => {
         console.log(err);
         console.log("Error fetching user id");

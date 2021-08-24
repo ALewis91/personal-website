@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-import Aux from "../hoc/Aux/Aux";
-import Navbar from "./Navbar";
-import Header from "./Header";
-import About from './About';
-import Contact from './Contact';
-import Projects from './Projects';
-import Resume from './Resume';
+import Aux from "../../hoc/Aux/Aux";
+import Navbar from "../UI/Navbar/Navbar";
+import Header from "../Header/Header";
+import About from '../About/About';
+import Contact from '../Contact/Contact';
+import Projects from '../Projects/Projects';
+import Resume from '../Resume/Resume';
 import { Waypoint } from "react-waypoint";
 
 class Profile extends Component {
@@ -22,10 +22,10 @@ class Profile extends Component {
           target: "section-about",
           text: "about",
         },
-        // {
-        //   target: "section-resume",
-        //   text: "resume",
-        // },
+        {
+          target: "section-resume",
+          text: "resume",
+        },
         // {
         //   target: "section-projects",
         //   text: "projects",
@@ -39,7 +39,9 @@ class Profile extends Component {
       profileInfo: null,
       skills: null,
       sideDrawerOpen: false,
-    }
+      resumeKey: null,
+      resumeUrl: null
+      }
     this.toggleSideDrawer = this.toggleSideDrawer.bind(this);
   }
 
@@ -52,8 +54,8 @@ class Profile extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.userId !== prevProps.userId) {
-      this.fetchProfile();
       this.fetchSkills();
+      this.fetchProfile();
     }
   }
 
@@ -66,9 +68,9 @@ class Profile extends Component {
         this.setState((prevState, props) => {
           const fetchedProfile = data;
           console.log("Profile info was fetched");
-          return { profileInfo: fetchedProfile };
+          return { profileInfo: fetchedProfile, 
+            resumeKey: `${fetchedProfile.creatorId}-${fetchedProfile.firstName}${fetchedProfile.lastName}ResumePDF.pdf` }
         });
-        console.log(data);
       }).catch(err => {
         console.log(err);
         console.log("Error fetching user profile");
@@ -86,12 +88,16 @@ class Profile extends Component {
           console.log("Skill info was fetched");
           return { skills: fetchedSkills };
         });
-        console.log(data);
       }).catch(err => {
         console.log(err);
         console.log("Error fetching user skills");
       });
   }
+  
+  capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
 
   stickyNavToggleOn = () => {
     this.setState((prevState, props) => {
@@ -137,7 +143,9 @@ class Profile extends Component {
         <About
           skills={this.state.skills}
           ></About>
-        <Resume></Resume>
+        <Resume 
+          resumeKey={this.state.resumeKey}>
+          </Resume>
         <Projects></Projects>
         <Contact profileInfo={this.state.profileInfo}></Contact>
       </Aux>

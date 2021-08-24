@@ -1,7 +1,7 @@
 /* Header formatting */
 .Header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../assets/img/valdez.jpeg");
+    url("../../assets/img/valdez.jpeg");
   background-size: cover;
   background-position: center;
   height: 100vh;

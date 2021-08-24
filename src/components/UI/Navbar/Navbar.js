@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { Link } from "react-scroll";
 import classes from "./Navbar.module.css";
-import logo from "../assets/img/logo-dark.png";
+import logo from "../../../assets/img/logo-dark.png";
 
 // import logo from '../../../assets/img/logo.png';
 

@@ -1,9 +1,9 @@
 import { Component } from "react";
 
 import classes from "./Contact.module.css";
-import SectionHeader from "./SectionHeader";
+import SectionHeader from "../UI/SectionHeader/SectionHeader";
 import ContactSource from "./ContactSource";
-import Footer from "./Footer";
+import Footer from "../Footer/Footer";
 
 class Contact extends Component {
   render() {
