@@ -27,7 +27,6 @@ class App extends Component {
       }).then(data => {
         this.setState((prevState, props) => {
           const fetchedId = data.userId;
-          console.log(`User ID retrieved for user with email ${email}` );
           return { userId: fetchedId };
         });
       }).catch(err => {
