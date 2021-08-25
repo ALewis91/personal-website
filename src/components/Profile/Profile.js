@@ -95,9 +95,7 @@ class Profile extends Component {
   }
 
   fetchExperiences() {
-    console.log('fetching experiences');
     let experienceApiUrl = `${process.env.REACT_APP_API_URL}/experience-service/user/${this.props.userId}`;
-    console.log(`[Profile] experienceApiUrl: ${experienceApiUrl}`);
     fetch(experienceApiUrl)
     .then(response => {
       return response.json();
