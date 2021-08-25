@@ -49,6 +49,7 @@
 .navItem:active,
 .navItem:hover {
   color: #00ddd291;
+  cursor: pointer;
 }
 
 .active {

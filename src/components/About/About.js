@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import classes from "./About.module.css";
 import selfie from "../../assets/img/aaron-selfie__dark_square.png";
-import Skill from "../Skill/Skill";
+import Skill from "./Skill/Skill";
 import SectionHeader from "../UI/SectionHeader/SectionHeader";
 
 class About extends Component {
@@ -18,7 +18,6 @@ class About extends Component {
           name={skill.skillName} 
           value={skill.value}></Skill>
         )}
-
     }
 
     return (

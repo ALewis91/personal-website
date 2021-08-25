@@ -6,7 +6,7 @@ import Header from "../Header/Header";
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Projects from '../Projects/Projects';
-import Resume from '../Resume/Resume';
+import Experience from '../Experience/Experience';
 import { Waypoint } from "react-waypoint";
 
 class Profile extends Component {
@@ -22,10 +22,10 @@ class Profile extends Component {
           target: "section-about",
           text: "about",
         },
-        {
-          target: "section-resume",
-          text: "resume",
-        },
+        // {
+        //   target: "section-experience",
+        //   text: "experience",
+        // },
         // {
         //   target: "section-projects",
         //   text: "projects",
@@ -40,7 +40,7 @@ class Profile extends Component {
       skills: null,
       sideDrawerOpen: false,
       resumeKey: null,
-      resumeUrl: null
+      experiences: null
       }
     this.toggleSideDrawer = this.toggleSideDrawer.bind(this);
   }
@@ -49,13 +49,15 @@ class Profile extends Component {
     if (this.props.userId !== null) {
       this.fetchProfile();
       this.fetchSkills();
+      this.fetchExperiences();
     }
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.userId !== prevProps.userId) {
-      this.fetchSkills();
       this.fetchProfile();
+      this.fetchSkills();
+      this.fetchExperiences();
     }
   }
 
@@ -67,7 +69,6 @@ class Profile extends Component {
       }).then(data => {
         this.setState((prevState, props) => {
           const fetchedProfile = data;
-          console.log("Profile info was fetched");
           return { profileInfo: fetchedProfile, 
             resumeKey: `${fetchedProfile.creatorId}-${fetchedProfile.firstName}${fetchedProfile.lastName}ResumePDF.pdf` }
         });
@@ -85,7 +86,6 @@ class Profile extends Component {
       }).then(data => {
         this.setState((prevState, props) => {
           const fetchedSkills = data;
-          console.log("Skill info was fetched");
           return { skills: fetchedSkills };
         });
       }).catch(err => {
@@ -93,11 +93,24 @@ class Profile extends Component {
         console.log("Error fetching user skills");
       });
   }
-  
-  capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
 
+  fetchExperiences() {
+    console.log('fetching experiences');
+    let experienceApiUrl = `${process.env.REACT_APP_API_URL}/experience-service/user/${this.props.userId}`;
+    console.log(`[Profile] experienceApiUrl: ${experienceApiUrl}`);
+    fetch(experienceApiUrl)
+    .then(response => {
+      return response.json();
+    }).then(data => {
+      this.setState((prevState, props) => {
+        const fetchedExperiences = data;
+        return { experiences: fetchedExperiences };
+      });
+    }).catch(err => {
+      console.log(err);
+      console.log("Error fetching user experiences");
+    });
+  }
 
   stickyNavToggleOn = () => {
     this.setState((prevState, props) => {
@@ -143,9 +156,10 @@ class Profile extends Component {
         <About
           skills={this.state.skills}
           ></About>
-        <Resume 
+        {/* <Experience
+          experiences={this.state.experiences}
           resumeKey={this.state.resumeKey}>
-          </Resume>
+          </Experience> */}
         <Projects></Projects>
         <Contact profileInfo={this.state.profileInfo}></Contact>
       </Aux>
