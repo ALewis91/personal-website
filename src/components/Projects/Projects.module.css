@@ -6,7 +6,8 @@
 
 .UnderCon {
   background-color: transparent;
-  max-width: 80%;
-  margin-left: 10%;
-  margin-top: 50%;
+  width: 50%;
+  margin-left: 50%;
+  margin-top: 20px;
+  transform: translate(-50%);
 }
