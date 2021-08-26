@@ -9,8 +9,7 @@ class About extends Component {
   render() {
     let skillsList = [];
     if (this.props.skills) {
-      const parent = this.props.skills;
-      for (const skill of parent.skills) {
+      for (const skill of this.props.skills) {
         skillsList.push(
           <Skill
             key={skill.id}
