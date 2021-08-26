@@ -37,10 +37,10 @@ class Profile extends Component {
       ],
       stickyNav: false,
       profileInfo: null,
-      skills: null,
+      skills: [],
       sideDrawerOpen: false,
       resumeKey: null,
-      experiences: null,
+      experiences: [],
     };
     this.toggleSideDrawer = this.toggleSideDrawer.bind(this);
   }
@@ -91,7 +91,7 @@ class Profile extends Component {
       .then((data) => {
         this.setState((prevState, props) => {
           const fetchedSkills = data;
-          return { skills: fetchedSkills };
+          return { skills: [...fetchedSkills.skills] };
         });
       })
       .catch((err) => {
@@ -109,7 +109,7 @@ class Profile extends Component {
       .then((data) => {
         this.setState((prevState, props) => {
           const fetchedExperiences = data;
-          return { experiences: fetchedExperiences };
+          return { experiences: [...fetchedExperiences.experiences] };
         });
       })
       .catch((err) => {
