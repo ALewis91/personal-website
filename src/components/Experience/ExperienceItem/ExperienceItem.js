@@ -4,7 +4,6 @@ import { Component } from "react";
 class ExperienceItem extends Component {
   convertDateToMonthYear(date) {
     let year = parseInt(date.split("-")[0]);
-    console.log(year);
     let month = parseInt(date.split("-")[1]);
     const monthNames = [
       "January",
@@ -44,7 +43,6 @@ class ExperienceItem extends Component {
   render() {
     let experienceItem = null;
     if (this.props.experience) {
-      console.log(this.props.experience);
       const convertedStartDate = this.convertDateToMonthYear(
         this.props.experience.startDate
       );
