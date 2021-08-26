@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import classes from "./Experience.module.css";
 import Button from "../UI/Button/Button";
-import SectionHeader from "../UI/SectionHeader/SectionHeader";
+import SectionHeader from "../Header/SectionHeader/SectionHeader";
 import ExperienceList from "./ExperienceList/ExperienceList";
 
 class Experiences extends Component {
@@ -51,11 +51,9 @@ class Experiences extends Component {
         <div className={classes.experienceBox}>
           <SectionHeader
             title="Experience"
-            subtitle="A little about what I've done..."
+            subtitle="A bit about my background..."
           ></SectionHeader>
-          <ExperienceList
-            experiences={this.props.experiences}
-          ></ExperienceList>
+          <ExperienceList experiences={this.props.experiences}></ExperienceList>
           <Button
             style={buttonStyle}
             onClick={() => this.fetchResume(this.props.resumeKey)}
