@@ -1,9 +1,9 @@
 import classes from "./Footer.module.css";
 import { Link } from "react-scroll";
-import preval from 'preval.macro';
+import preval from "preval.macro";
 
 const Footer = () => {
-  const today = preval`module.exports = new Date().toLocaleString();`
+  const today = preval`module.exports = new Date().toLocaleString();`;
 
   return (
     <div className={classes.footer}>

@@ -1,163 +1,157 @@
 .aboutSection {
-    background-color: black;
-    min-height: 100vh;
-    padding-bottom: 20px;
+  background-color: black;
+  min-height: 100vh;
+  padding-bottom: 20px;
 }
 
 .aboutBox {
-    color: #e1e1e1;
-    width: 80%;
-    margin-left: 10%;
+  color: #e1e1e1;
+  width: 80%;
+  margin-left: 10%;
 }
 
 .aboutBox h3 {
-    font-weight: 400;
+  font-weight: 400;
 }
 
-
 .selfie {
-    border-radius: 50%;
-    height: 150px;
-    border: 2px solid #a0a0a0;
-    margin-right: 15px;
+  border-radius: 50%;
+  height: 150px;
+  border: 2px solid #a0a0a0;
+  margin-right: 15px;
 }
 
 .skillsBox {
-    width: 100%;
+  width: 100%;
 }
 
 .subHeader {
-    text-align: left;
-    color: white;
-    font-weight: 400;
+  text-align: left;
+  color: white;
+  font-weight: 400;
 }
 
 .row_1_span_2 {
-    margin: 20px 0;
-    width: 50%;
-    padding: 0 10px;
-    min-width: 400px;
+  margin: 20px 0;
+  width: 50%;
+  padding: 0 10px;
+  min-width: 400px;
 }
 
 .box_2_col {
-    display: flex;
-    flex-flow: row wrap;
-    padding-top: 35px;
-    justify-content: center;
-    align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  padding-top: 35px;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .introBox {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    padding-top: 35px;
-    justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding-top: 35px;
+  justify-content: center;
 }
 
 .introBox p {
-    text-align: justify;
-    line-height: 120%;
-    color:#a0a0a0;
-    max-width: 50%;
-    min-width: 400px;
+  text-align: justify;
+  line-height: 120%;
+  color: #a0a0a0;
+  max-width: 50%;
+  min-width: 400px;
 }
 
 .highlightsBox a {
-    text-decoration: none;
-    color: #00ddd2;
+  text-decoration: none;
+  color: #00ddd2;
 }
 
 .small_ghost_p {
-    margin: 20px 0;
-    font-size: 80%;
-    text-align: justify;
-    line-height: 150%;
-    color:#a0a0a0;
-    max-width: 80%;
-    min-width: 400px;
+  margin: 20px 0;
+  font-size: 80%;
+  text-align: justify;
+  line-height: 150%;
+  color: #a0a0a0;
+  max-width: 80%;
+  min-width: 400px;
 }
 
 .ghost_h3 {
-    color:#a0a0a0e7;
-    font-size: 100%;
-    text-align: left;
+  color: #a0a0a0e7;
+  font-size: 100%;
+  text-align: left;
 }
 
-
 .skillBox {
-    width: 80%;
-    padding-left: 20px;
+  width: 80%;
+  padding-left: 20px;
 }
 
 .spacer {
-    padding-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 @media (max-width: 480px) {
+  .aboutBox {
+    width: 90%;
+    margin-left: 5%;
+  }
 
-    .aboutBox {
-        color: #e1e1e1;
-        width: 90%;
-        margin-left: 5%;
-    }
+  .selfie {
+    border-radius: 50%;
+    height: 130px;
+    margin-bottom: 10px;
+  }
 
-    .selfie {
-        border-radius: 50%;
-        height: 130px;
-        border: 2px solid #a0a0a0;
-        margin-right: 15px;
-        margin-bottom: 10px;
-    }
+  .aboutBox p {
+    text-align: justify;
+    line-height: 120%;
+    color: #a0a0a0;
+    min-width: 300px;
+  }
 
-    .aboutBox p {
-        text-align: justify;
-        line-height: 120%;
-        color:#a0a0a0;
-        min-width: 300px;
-    }
+  .row_1_span_2 {
+    margin: 5% 0;
+    width: 100%;
+    padding: 0;
+    min-width: 300px;
+  }
 
-    .row_1_span_2 {
-        margin: 5% 0;
-        width: 90%;
-        padding: 0;
-        min-width: 300px;
-    }
+  .small_ghost_p {
+    margin: 0;
+    font-size: 80%;
+    text-align: justify;
+    line-height: 100%;
+    color: #a0a0a0;
+    max-width: 100% !important;
+  }
 
-    .small_ghost_p {
-        margin: 0;
-        font-size: 80%;
-        text-align: justify;
-        line-height: 150%;
-        color:#a0a0a0;
-        max-width: 100% !important;
-    }
+  .spacer {
+    padding-bottom: 10px;
+  }
 
-    .spacer {
-        padding-bottom: 40px;
-    }
+  .introBox {
+    padding-top: 15px;
+  }
 
-    .introBox {
-        padding-top: 15px;
-    }
+  .summaryDemographics .small_ghost_p {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 80%;
+    text-align: justify;
+    line-height: 150%;
+    color: #a0a0a0;
+    width: 100%;
+  }
 
-    .summaryDemographics .small_ghost_p {
-        margin-top: 5px;
-        margin-bottom: 15px;
-        font-size: 80%;
-        text-align: justify;
-        line-height: 150%;
-        color:#a0a0a0;
-        width: 100%;
-    }
-    
-    .skillBox:first-of-type {
-        padding-top: 10px;
-    }
+  .skillBox:first-of-type {
+    padding-top: 10px;
+  }
 
-    .skillBox {
-        width: 90%;
-        margin-left: 5%;
-        padding-left: 0;
-    }
+  .skillBox {
+    width: 90%;
+    margin-left: 5%;
+    padding-left: 0;
+  }
 }

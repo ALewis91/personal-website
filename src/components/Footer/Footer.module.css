@@ -19,7 +19,7 @@
 }
 
 .topNavButton {
-    width: 100%;
+  width: 100%;
   position: absolute;
   color: #e1e1e1;
   text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.8);
@@ -27,7 +27,7 @@
 }
 
 .topNavButton ion-icon {
-    transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 @media (max-width: 480px) {

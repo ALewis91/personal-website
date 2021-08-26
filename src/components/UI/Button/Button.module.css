@@ -1,24 +1,27 @@
 .Button {
-    font-size: 80%;
-    font-weight: bold;
-    width: 150px;
-    border-radius: 200px;
-    border: solid 2px rgb(255, 255, 255);
-    cursor: pointer;
-    text-align: center;
-    margin: auto;
-    padding: 3px 4px 5px 4px;
-    transition: color 0.2s, border 0.2s;
+  font-size: 100%;
+  font-weight: bold;
+  width: 200px;
+  border-radius: 200px;
+  border: solid 2px rgb(255, 255, 255);
+  cursor: pointer;
+  text-align: center;
+  padding: 3px 4px 5px 4px;
+
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: color 0.2s, border 0.2s;
 }
 
 .Button:link,
 .Button:visited {
-    color: white;
-    border: solid 2px rgb(255, 255, 255);
+  color: white;
+  border: solid 2px rgb(255, 255, 255);
 }
 
 .Button:hover,
 .Button:active {
-    color: #00ddd290;
-    border: solid 2px #00ddd290;
+  color: #00ddd290;
+  border: solid 2px #00ddd290;
 }

@@ -12,7 +12,7 @@
 
 .logo {
   border-radius: 50%;
-  width:40px;
+  width: 40px;
   height: 40px;
   display: inline-block;
   float: left;
@@ -39,7 +39,7 @@
 .navItem {
   text-transform: uppercase;
   color: white;
-  margin: auto 0;
+  margin: auto 5px;
   font-size: 75%;
   font-weight: 400;
   transition: color 0.4s;
@@ -74,7 +74,7 @@
 }
 
 .navbar_name {
-  display:none;
+  display: none;
   color: white;
 }
 
@@ -86,8 +86,21 @@
   display: none;
 }
 
-@media (max-width: 480px) {
-  .Navbar, .sticky {
+@media (max-width: 920px) {
+  .Navbar {
+    padding: 0 5%;
+  }
+}
+
+/* @media (max-width: 680px) {
+  .Navbar {
+    padding: 0 5%;
+  }
+} */
+
+@media (max-width: 599px) {
+  .Navbar,
+  .sticky {
     position: fixed;
     text-align: left;
     height: 50px;
@@ -150,7 +163,7 @@
     float: left;
   }
   .hamburgerIcon ion-icon {
-    color:aliceblue;
+    color: aliceblue;
     margin-top: 25px;
     transform: translateY(-50%);
     margin-left: 20px;
@@ -190,7 +203,7 @@
     vertical-align: middle;
     margin-left: 30px;
   }
-  
+
   .navItem {
     font-weight: 300;
     width: 100%;

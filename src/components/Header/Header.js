@@ -45,10 +45,15 @@ class Header extends Component {
       if (this.props.profileInfo.skypeUrl) {
         socialMediaLinks.push(
           <li key="skype">
-            <a href={this.props.profileInfo.skypeUrl}
-            target="_blank"
-            rel="noopener noreferrer">
-              <ion-icon className={classes.large_icon} name="logo-skype"></ion-icon>
+            <a
+              href={this.props.profileInfo.skypeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ion-icon
+                className={classes.large_icon}
+                name="logo-skype"
+              ></ion-icon>
             </a>
           </li>
         );
@@ -68,9 +73,7 @@ class Header extends Component {
               <h3>Aspiring Full-Stack Developer</h3>
             </div>
             <div className={classes.row}>
-              <ul className={classes.Social}>
-                {socialMediaLinks}
-              </ul>
+              <ul className={classes.Social}>{socialMediaLinks}</ul>
             </div>
           </div>
 

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import classes from "./About.module.css";
 import selfie from "../../assets/img/aaron-selfie__dark_square.png";
 import Skill from "./Skill/Skill";
-import SectionHeader from "../UI/SectionHeader/SectionHeader";
+import SectionHeader from "../Header/SectionHeader/SectionHeader";
 
 class About extends Component {
   render() {
@@ -12,12 +12,14 @@ class About extends Component {
       const parent = this.props.skills;
       for (const skill of parent.skills) {
         skillsList.push(
-          <Skill 
-          key={skill.id}
-          id={skill.id}
-          name={skill.skillName} 
-          value={skill.value}></Skill>
-        )}
+          <Skill
+            key={skill.id}
+            id={skill.id}
+            name={skill.skillName}
+            value={skill.value}
+          ></Skill>
+        );
+      }
     }
 
     return (
@@ -63,14 +65,10 @@ class About extends Component {
               <div className={classes.skillsBox}>
                 <h3 className={classes.subHeader}>Skills</h3>
                 <p className={classes.small_ghost_p}>
-                  I'm a hard-working, independent professional who enjoys
-                  leveraging programming to solve everyday problems. I consider
-                  myself a Java programmer but I am also very familiar with C++.
-                  Below are some highlights:
+                  I mainly consider myself a Java programmer but here's how I
+                  would rate myself overall:
                 </p>
-                <div className={classes.skillBox}>
-                  {skillsList}
-                </div>
+                <div className={classes.skillBox}>{skillsList}</div>
               </div>
             </div>
           </div>

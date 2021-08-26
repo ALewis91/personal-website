@@ -7,7 +7,9 @@ const Skill = (props) => {
     proficiencyBlocks.push(<div key={i} className={classes.skillBlock}></div>);
   }
   for (var j = props.value; j < 10; j++) {
-      proficiencyBlocks.push(<div key={j} className={classes.skillBlockEmpty}></div>)
+    proficiencyBlocks.push(
+      <div key={j} className={classes.skillBlockEmpty}></div>
+    );
   }
   return (
     <div className={classes.skillBox}>

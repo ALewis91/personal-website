@@ -3,10 +3,10 @@ import React, { Component } from "react";
 import Aux from "../../hoc/Aux/Aux";
 import Navbar from "../UI/Navbar/Navbar";
 import Header from "../Header/Header";
-import About from '../About/About';
-import Contact from '../Contact/Contact';
-import Projects from '../Projects/Projects';
-import Experience from '../Experience/Experience';
+import About from "../About/About";
+import Contact from "../Contact/Contact";
+import Projects from "../Projects/Projects";
+import Experience from "../Experience/Experience";
 import { Waypoint } from "react-waypoint";
 
 class Profile extends Component {
@@ -22,14 +22,14 @@ class Profile extends Component {
           target: "section-about",
           text: "about",
         },
-        // {
-        //   target: "section-experience",
-        //   text: "experience",
-        // },
-        // {
-        //   target: "section-projects",
-        //   text: "projects",
-        // },
+        {
+          target: "section-experience",
+          text: "experience",
+        },
+        {
+          target: "section-projects",
+          text: "projects",
+        },
         {
           target: "section-contact",
           text: "contact",
@@ -40,8 +40,8 @@ class Profile extends Component {
       skills: null,
       sideDrawerOpen: false,
       resumeKey: null,
-      experiences: null
-      }
+      experiences: null,
+    };
     this.toggleSideDrawer = this.toggleSideDrawer.bind(this);
   }
 
@@ -64,15 +64,19 @@ class Profile extends Component {
   fetchProfile() {
     let profileApiUrl = `${process.env.REACT_APP_API_URL}/profile-service/user/${this.props.userId}`;
     fetch(profileApiUrl)
-    .then(response => {
+      .then((response) => {
         return response.json();
-      }).then(data => {
+      })
+      .then((data) => {
         this.setState((prevState, props) => {
           const fetchedProfile = data;
-          return { profileInfo: fetchedProfile, 
-            resumeKey: `${fetchedProfile.creatorId}-${fetchedProfile.firstName}${fetchedProfile.lastName}ResumePDF.pdf` }
+          return {
+            profileInfo: fetchedProfile,
+            resumeKey: `${fetchedProfile.creatorId}-${fetchedProfile.firstName}${fetchedProfile.lastName}Resume.pdf`,
+          };
         });
-      }).catch(err => {
+      })
+      .catch((err) => {
         console.log(err);
         console.log("Error fetching user profile");
       });
@@ -81,14 +85,16 @@ class Profile extends Component {
   fetchSkills() {
     let skillApiUrl = `${process.env.REACT_APP_API_URL}/skills-service/user/${this.props.userId}`;
     fetch(skillApiUrl)
-    .then(response => {
+      .then((response) => {
         return response.json();
-      }).then(data => {
+      })
+      .then((data) => {
         this.setState((prevState, props) => {
           const fetchedSkills = data;
           return { skills: fetchedSkills };
         });
-      }).catch(err => {
+      })
+      .catch((err) => {
         console.log(err);
         console.log("Error fetching user skills");
       });
@@ -97,17 +103,19 @@ class Profile extends Component {
   fetchExperiences() {
     let experienceApiUrl = `${process.env.REACT_APP_API_URL}/experience-service/user/${this.props.userId}`;
     fetch(experienceApiUrl)
-    .then(response => {
-      return response.json();
-    }).then(data => {
-      this.setState((prevState, props) => {
-        const fetchedExperiences = data;
-        return { experiences: fetchedExperiences };
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.setState((prevState, props) => {
+          const fetchedExperiences = data;
+          return { experiences: fetchedExperiences };
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        console.log("Error fetching user experiences");
       });
-    }).catch(err => {
-      console.log(err);
-      console.log("Error fetching user experiences");
-    });
   }
 
   stickyNavToggleOn = () => {
@@ -129,7 +137,7 @@ class Profile extends Component {
       const newSideDrawerState = !prevState.sideDrawerOpen;
       return { sideDrawerOpen: newSideDrawerState };
     });
-  };
+  }
 
   render() {
     return (
@@ -140,24 +148,23 @@ class Profile extends Component {
           topOffset={51}
         >
           <div>
-          <Navbar
+            <Navbar
               links={this.state.links}
               sticky={this.state.stickyNav}
               sideDrawerOpen={this.state.sideDrawerOpen}
               toggleSideDrawer={this.toggleSideDrawer.bind(this)}
-              ></Navbar>
-            <Header 
-              links={this.state.links} 
-              profileInfo={this.state.profileInfo}></Header>
+            ></Navbar>
+            <Header
+              links={this.state.links}
+              profileInfo={this.state.profileInfo}
+            ></Header>
           </div>
         </Waypoint>
-        <About
-          skills={this.state.skills}
-          ></About>
-        {/* <Experience
+        <About skills={this.state.skills}></About>
+        <Experience
           experiences={this.state.experiences}
-          resumeKey={this.state.resumeKey}>
-          </Experience> */}
+          resumeKey={this.state.resumeKey}
+        ></Experience>
         <Projects></Projects>
         <Contact profileInfo={this.state.profileInfo}></Contact>
       </Aux>

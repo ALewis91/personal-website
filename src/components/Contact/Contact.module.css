@@ -1,41 +1,41 @@
 .contactSection {
-    background-color: rgb(14, 14, 14);
-    min-height: 100vh;
-    position: relative;
+  background-color: rgb(14, 14, 14);
+  min-height: 100vh;
+  position: relative;
 }
 
 .contactBox {
-    color: #e1e1e1;
-    width: 80%;
-    margin-left: 10%;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
+  color: #e1e1e1;
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
 }
 
 .contactHeaderBox {
-    text-align: center;
+  text-align: center;
 }
 
 .contactSourcesBox {
-    margin: 100px 10%;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    justify-content: space-around;
-    width: 80%;
+  margin: 100px 10%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+  width: 80%;
 }
 
 .FooterBox {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 @media (max-width: 480px) {
-    .contactSourcesBox {
-        margin: 50px 10% 90px 10%;
-        width: 80%;
-    }
+  .contactSourcesBox {
+    margin: 50px 10% 90px 10%;
+    width: 80%;
+  }
 }

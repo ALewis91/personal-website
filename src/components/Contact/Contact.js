@@ -1,8 +1,8 @@
 import { Component } from "react";
 
 import classes from "./Contact.module.css";
-import SectionHeader from "../UI/SectionHeader/SectionHeader";
-import ContactSource from "./ContactSource";
+import SectionHeader from "../Header/SectionHeader/SectionHeader";
+import ContactSource from "./ContactSource/ContactSource";
 import Footer from "../Footer/Footer";
 
 class Contact extends Component {
@@ -74,7 +74,10 @@ class Contact extends Component {
             isLink={true}
             link={this.props.profileInfo.linkedInUrl}
           >
-            {this.props.profileInfo.linkedInUrl.substring(12,this.props.profileInfo.linkedInUrl.length - 1)}
+            {this.props.profileInfo.linkedInUrl.substring(
+              12,
+              this.props.profileInfo.linkedInUrl.length - 1
+            )}
           </ContactSource>
         );
       }
@@ -94,15 +97,18 @@ class Contact extends Component {
       }
 
       //If the user provided some address info, create a contact source with that info
-    if (locationBuffer.length > 0) {
-      contactSources.push(
-        <ContactSource 
-        key="location"
-        iconName="navigate-circle" title="location" isJSX={true}>
-          {locationBuffer}
-        </ContactSource>
-      );
-    }
+      if (locationBuffer.length > 0) {
+        contactSources.push(
+          <ContactSource
+            key="location"
+            iconName="navigate-circle"
+            title="location"
+            isJSX={true}
+          >
+            {locationBuffer}
+          </ContactSource>
+        );
+      }
     }
 
     return (
@@ -115,9 +121,7 @@ class Contact extends Component {
             ></SectionHeader>
             <p>Let me get to know more about you.</p>
           </div>
-          <div className={classes.contactSourcesBox}>
-            {contactSources}
-          </div>
+          <div className={classes.contactSourcesBox}>{contactSources}</div>
         </div>
         <div className={classes.FooterBox}>
           <Footer></Footer>

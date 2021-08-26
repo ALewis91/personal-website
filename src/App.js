@@ -1,38 +1,40 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Aux from './hoc/Aux/Aux';
-import Profile from './components/Profile/Profile';
+import Aux from "./hoc/Aux/Aux";
+import Profile from "./components/Profile/Profile";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userId: null
-    }
+      userId: null,
+    };
   }
 
   componentDidMount() {
     let userApiUrl = `${process.env.REACT_APP_API_URL}/user-service/`;
-    let email = 'contact@aaronlewis.dev';
-    let password = 'sillygoose';
+    let email = "contact@aaronlewis.dev";
+    let password = "sillygoose";
     fetch(userApiUrl, {
-      method: 'GET',
+      method: "GET",
       headers: {
-        "email": email,
-        "password": password
-      }
+        email: email,
+        password: password,
+      },
     })
-    .then(response => {
+      .then((response) => {
         return response.json();
-      }).then(data => {
+      })
+      .then((data) => {
         this.setState((prevState, props) => {
           const fetchedId = data.userId;
           return { userId: fetchedId };
         });
-      }).catch(err => {
+      })
+      .catch((err) => {
         console.log(err);
         console.log("Error fetching user id");
-      })
+      });
   }
 
   render() {
