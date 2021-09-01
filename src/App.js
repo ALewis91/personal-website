@@ -3,6 +3,9 @@ import React, { Component } from "react";
 import Aux from "./hoc/Aux/Aux";
 import Profile from "./components/Profile/Profile";
 
+import { Route, Switch } from "react-router-dom";
+import EightPuzzle from "./components/Projects/Project/EightPuzzle/EightPuzzle";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +43,14 @@ class App extends Component {
   render() {
     return (
       <Aux>
-        <Profile userId={this.state.userId}></Profile>
+        <Switch>
+          <Route path="/" exact>
+            <Profile userId={this.state.userId} />
+          </Route>
+          <Route path="/projects/8-puzzle-solver">
+            <EightPuzzle></EightPuzzle>
+          </Route>
+        </Switch>
       </Aux>
     );
   }
