@@ -1,0 +1,23 @@
+.project_summary {
+  width: 250px;
+  display: inline-block;
+  text-align: center;
+  margin: 20px;
+}
+.project_summary h3 {
+  display: inline-block;
+
+  font-weight: bold;
+}
+
+.project_summary h4 {
+  color: #a0a0a0;
+  font-weight: normal;
+}
+
+.project_summary img {
+  margin-top: 10px;
+  width: 250px;
+  height: auto;
+  cursor: pointer;
+}

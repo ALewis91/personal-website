@@ -1,0 +1,91 @@
+.eight_puzzle_project {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.eight_puzzle_project h4 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.eight_puzzle {
+  height: 300px;
+  width: 300px;
+  border: 2px;
+  background-color: white;
+  color: black;
+  border: 3px solid grey;
+  display: inline-block;
+}
+
+.eight_puzzle_piece {
+  width: 98px;
+  height: 98px;
+  font-size: 80px;
+  text-align: center;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+.eight_puzzle_piece_blank {
+  color: transparent;
+}
+
+.solution_box {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.solution_box ion-icon {
+  display: inline-block;
+  margin-top: 150px;
+  transform: translatey(-50%);
+  font-size: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.button_row {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.puzzle_button {
+  display: inline-block;
+  margin: 30px 15px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.steps {
+  color: white;
+}
+
+.form_content label {
+  display: inline-block;
+  height: 24.55px;
+}
+
+.form_content input[type="text"] {
+  display: inline-block;
+  font-size: 24px;
+  height: 24.55px;
+}
+
+.form_content {
+  height: 100%;
+  font-size: 100%;
+  font-weight: bold;
+  display: flex;
+  flex-flow: row;
+  margin: auto;
+}
+.form_content .input_box {
+  display: inline-block;
+  width: 73px;
+  height: 24.55px;
+}

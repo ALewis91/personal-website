@@ -1,0 +1,20 @@
+.back_button {
+  margin: 0;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.project_header {
+  padding: 50px 0;
+  background-color: black;
+  color: white;
+}
+.project_title {
+  display: inline-block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.project_description {
+}
