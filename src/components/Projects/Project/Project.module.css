@@ -1,5 +1,10 @@
 .content {
   padding-top: 40px;
-  background-color: black;
   color: white;
+  height: 100%;
+}
+
+.project {
+  min-height: 100vh;
+  background-color: black;
 }
